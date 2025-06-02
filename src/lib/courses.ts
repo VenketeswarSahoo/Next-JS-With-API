@@ -2,11 +2,13 @@
 
 import { getAccessToken } from "./apiClient";
 
+const baseURL = "https://api.bidyasagar.tech";
+
 export async function getAllCourses() {
   const token = await getAccessToken();
 
   const res = await fetch(
-    `${process.env.API_BASE_URL}/api/courseservice/courses/course/getallcourse`,
+    `${baseURL}/api/courseservice/courses/course/getallcourse`,
     {
       headers: { Authorization: `Bearer ${token}` },
     }
@@ -21,7 +23,7 @@ export async function getTopCourses() {
   const token = await getAccessToken();
 
   const res = await fetch(
-    `${process.env.API_BASE_URL}/api/courseservice/courses/course/topcoursees/`,
+    `${baseURL}/api/courseservice/courses/course/topcoursees/`,
     {
       headers: { Authorization: `Bearer ${token}` },
     }

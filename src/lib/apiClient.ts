@@ -3,10 +3,12 @@ import { v4 as uuidv4 } from "uuid";
 
 let cachedToken: string | null = null;
 
+const baseURL = "https://api.bidyasagar.tech";
+
 export async function getAccessToken(): Promise<string> {
   if (cachedToken) return cachedToken;
 
-  const res = await fetch(`${process.env.API_BASE_URL}/api/users/guestlogin/`, {
+  const res = await fetch(`${baseURL}/api/users/guestlogin/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
