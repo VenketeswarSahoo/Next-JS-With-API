@@ -6,7 +6,7 @@ let cachedToken: string | null = null;
 export async function getAccessToken(): Promise<string> {
   if (cachedToken) return cachedToken;
 
-  const res = await fetch("https://api.bidyasagar.tech/api/users/guestlogin/", {
+  const res = await fetch(`${process.env.API_BASE_URL}/api/users/guestlogin/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
